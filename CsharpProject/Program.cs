@@ -310,29 +310,29 @@
 // }
 
 //--------------------------___________Role playing game battle challenge______-------------
-Random random = new Random();   
-int heroHealth = 20;
-int monsterHealth = 20; 
-int damage ;
+// Random random = new Random();   
+// int heroHealth = 20;
+// int monsterHealth = 20; 
+// int damage ;
 
-do{
-    Console.WriteLine("");
-    damage = random.Next(1, 10);
-    monsterHealth = monsterHealth-damage;
-    Console.WriteLine($"Monster was damaged and lost {damage} health and now has {monsterHealth} health.");
+// do{
+//     Console.WriteLine("");
+//     damage = random.Next(1, 10);
+//     monsterHealth = monsterHealth-damage;
+//     Console.WriteLine($"Monster was damaged and lost {damage} health and now has {monsterHealth} health.");
 
-    if(monsterHealth < 0) continue;
+//     if(monsterHealth < 0) continue;
 
-    damage = random.Next(1, 10);
-    heroHealth = heroHealth-damage;
-    Console.WriteLine($"Hero was damaged and lost {damage} health and now has {heroHealth} health.");
+//     damage = random.Next(1, 10);
+//     heroHealth = heroHealth-damage;
+//     Console.WriteLine($"Hero was damaged and lost {damage} health and now has {heroHealth} health.");
 
-    Console.WriteLine("");
-} while(heroHealth > 0 && monsterHealth > 0);
+//     Console.WriteLine("");
+// } while(heroHealth > 0 && monsterHealth > 0);
 
-if(heroHealth > monsterHealth) Console.WriteLine("Hero Wins!");
-else if(monsterHealth > heroHealth) Console.WriteLine("Monster wins!");
-else Console.WriteLine("Draw x.");
+// if(heroHealth > monsterHealth) Console.WriteLine("Hero Wins!");
+// else if(monsterHealth > heroHealth) Console.WriteLine("Monster wins!");
+// else Console.WriteLine("Draw x.");
 
 //--------------------------___________Role playing game battle challenge______-------------
 // string? readResult;
@@ -360,3 +360,34 @@ else Console.WriteLine("Draw x.");
 //         }
 //     }
 // } while (validEntry == false);
+
+//__________________________----Code project 1 - write code that validates integer input----____________________
+string? readResult;
+int numericValue = 0;
+bool validEntry = false;
+
+Console.WriteLine("Enter a number between 5 and 10:");
+
+do{
+    readResult = Console.ReadLine();
+    validEntry = int.TryParse(readResult, out numericValue);
+    if(validEntry)
+    {
+        if(numericValue > 5 && numericValue < 10){
+             break; 
+        }   
+        else
+        {
+            Console.WriteLine($"You entered {numericValue}. Please enter a number between 5 and 10.");
+            validEntry = false;
+        }
+    }
+    else
+    {
+        Console.WriteLine("Sorry, you entered an invalid number, please try again!");
+    }
+
+} while(validEntry == false);
+
+Console.WriteLine($"Your input value ({numericValue}) has been accepted.");
+//__________________________----Code project 1 - write code that validates integer input----____________________
