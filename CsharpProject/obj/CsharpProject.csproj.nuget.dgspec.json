@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\sushi\\CSharp-With-Microsoft\\CsharpProject\\CsharpProject.csproj": {}
+    "C:\\Users\\sushi\\CSharp-With-Microsoft\\CsharpProject\\CsharpProject.csproj": {}
   },
   "projects": {
-    "c:\\Users\\sushi\\CSharp-With-Microsoft\\CsharpProject\\CsharpProject.csproj": {
+    "C:\\Users\\sushi\\CSharp-With-Microsoft\\CsharpProject\\CsharpProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\sushi\\CSharp-With-Microsoft\\CsharpProject\\CsharpProject.csproj",
+        "projectUniqueName": "C:\\Users\\sushi\\CSharp-With-Microsoft\\CsharpProject\\CsharpProject.csproj",
         "projectName": "CsharpProject",
-        "projectPath": "c:\\Users\\sushi\\CSharp-With-Microsoft\\CsharpProject\\CsharpProject.csproj",
+        "projectPath": "C:\\Users\\sushi\\CSharp-With-Microsoft\\CsharpProject\\CsharpProject.csproj",
         "packagesPath": "C:\\Users\\sushi\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\sushi\\CSharp-With-Microsoft\\CsharpProject\\obj\\",
+        "outputPath": "C:\\Users\\sushi\\CSharp-With-Microsoft\\CsharpProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sushi\\AppData\\Roaming\\NuGet\\NuGet.Config",
