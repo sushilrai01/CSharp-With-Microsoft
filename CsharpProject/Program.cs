@@ -156,7 +156,7 @@
 
 // Console.WriteLine($"Total: {total}");
 
-// //Switch Statements......
+// --------------------------------------------Switch Statements..........................
 // int employeeLevel = 100;
 // string employeeName = "John Smith";
 
@@ -184,55 +184,106 @@
 // }
 
 // Console.WriteLine($"{employeeName},{title}");
-//--------------------
-string sku = "01-MN-L";
+//------------------------------------------------------
+// string sku = "01-MN-L";
 
-string[] product = sku.Split('-');
+// string[] product = sku.Split('-');
 
-string type = "";
-string color = "";
-string size = "";
+// string type = "";
+// string color = "";
+// string size = "";
 
-switch (product[0]) {
-    case "01":
-        type = "Sweat Shirt";
-        break;
-    case "02":
-        type = "T-Shirt";
-        break;
-    case "03":
-        type = "Sweat pants";
-        break;
-    default: 
-        type = "other";
-        break;
+// switch (product[0]) {
+//     case "01":
+//         type = "Sweat Shirt";
+//         break;
+//     case "02":
+//         type = "T-Shirt";
+//         break;
+//     case "03":
+//         type = "Sweat pants";
+//         break;
+//     default: 
+//         type = "other";
+//         break;
+// }
+
+// switch (product[1]) {
+//     case "BL": 
+//         color = "Black";
+//         break;
+//     case "MN":
+//         color = "Maroon";
+//         break;
+//     default: 
+//         color = "White";
+//         break;
+// }
+
+// switch(product[2]){
+//     case "S":
+//         size = "Small";
+//         break;
+//     case "M":
+//         size = "Medium";
+//         break;
+//     case "L":
+//         size = "Large";
+//         break;
+//     default:
+//         size = "One Size Fits All";
+//         break;
+// }
+
+// Console.WriteLine($"Product: {size} {color} {type}");
+
+//---------------------------------------------______For Loop______---------------------------------
+// for (int i = 0; i < 10; i++)
+// {
+//     Console.WriteLine(i);
+//     if (i == 7) {
+//         Console.WriteLine("yooo");
+//         break;
+//         // Console.WriteLine("yoossssso");
+//     }
+// }
+//--------------
+// string[] names = { "Alex", "Eddie", "David", "Michael" };
+// foreach (var name in names)
+// {
+//     // Can't do this:
+//     if (name == "David") name = "Sammy";
+// }
+
+// string[] names = { "Alex", "Eddie", "David", "Michael" };
+// for (int i = 0; i < names.Length; i++){
+//  if (names[i] == "David") {
+//         names[i] = "Sammy";
+//     }
+//     Console.WriteLine(names[i]);
+// }
+//        Console.WriteLine("[i]");
+
+//    foreach(var name in names) {
+       
+//     Console.WriteLine(name);
+
+//    }
+
+//----------------_______FizzBuzz Challenge_____------
+
+for (int i = 1; i <= 100; i++)
+{
+    if(i % 3 == 0 && i % 5 ==0){
+        Console.WriteLine(i + "- FizzBuzz");
+    }
+   
+    else if (i % 5 == 0){
+        Console.WriteLine(i + "- Buzz");
+    }
+    else if(i % 3 == 0){
+        Console.WriteLine(i + "- Fizz");
+    }
+    else
+        Console.WriteLine(i);
 }
-
-switch (product[1]) {
-    case "BL": 
-        color = "Black";
-        break;
-    case "MN":
-        color = "Maroon";
-        break;
-    default: 
-        color = "White";
-        break;
-}
-
-switch(product[2]){
-    case "S":
-        size = "Small";
-        break;
-    case "M":
-        size = "Medium";
-        break;
-    case "L":
-        size = "Large";
-        break;
-    default:
-        size = "One Size Fits All";
-        break;
-}
-
-Console.WriteLine($"Product: {size} {color} {type}");
