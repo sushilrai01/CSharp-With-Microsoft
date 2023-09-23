@@ -83,32 +83,75 @@
 
 // Console.WriteLine($"Discount: {(saleAmount > 1000 ? 100 : 50)}");
 
-string permission = "Admin|Manager";
-int level = 53;
+// string permission = "Admin|Manager";
+// int level = 53;
 
-if (permission.Contains("Admin"))
+// if (permission.Contains("Admin"))
+// {
+//     if (level > 55)
+//     {
+//         Console.WriteLine("Welcome, Super Admin user.");
+//     }
+//     else
+//     {
+//         Console.WriteLine("Welcome, Admin user.");
+//     }
+// }
+// else if (permission.Contains("Manager"))
+// {
+//     if (level >= 20)
+//     {
+//         Console.WriteLine("Contact an Admin for access.");
+//     }
+//     else
+//     {
+//         Console.WriteLine("You do not have sufficient privileges.");
+//     }
+// }
+// else
+// {
+//     Console.WriteLine("You do not have sufficient privileges.");
+// }
+
+// bool flag = true;
+// int value=0;
+// if(flag){
+//     value = 10;
+//     Console.WriteLine("Inside: " + value);
+//     value +=10; 
+//         Console.WriteLine("Inside1: " + value);
+
+// }
+// value +=10;
+//     Console.WriteLine($"outside:  {value}");
+// bool flag = true;
+// int value = 100;
+
+// if (flag)
+// {
+//     value = 11;
+//     Console.WriteLine("Inside of code block: " + value);
+// }
+// Console.WriteLine("Outside of code block: " + value);
+
+int[] numbers = { 4, 8, 15, 16, 23, 42 };
+bool found = false; 
+foreach (int number in numbers)
 {
-    if (level > 55)
+    int total = 0;
+
+    total += number;
+
+    if (number == 42)
     {
-        Console.WriteLine("Welcome, Super Admin user.");
+       bool found = true;
+        if (found) 
+        {
+            Console.WriteLine("Set contains 42");
+
+        }
     }
-    else
-    {
-        Console.WriteLine("Welcome, Admin user.");
-    }
+
 }
-else if (permission.Contains("Manager"))
-{
-    if (level >= 20)
-    {
-        Console.WriteLine("Contact an Admin for access.");
-    }
-    else
-    {
-        Console.WriteLine("You do not have sufficient privileges.");
-    }
-}
-else
-{
-    Console.WriteLine("You do not have sufficient privileges.");
-}
+
+Console.WriteLine($"Total: {total}");
