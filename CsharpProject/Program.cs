@@ -362,32 +362,84 @@
 // } while (validEntry == false);
 
 //__________________________----Code project 1 - write code that validates integer input----____________________
-string? readResult;
-int numericValue = 0;
-bool validEntry = false;
+// string? readResult;
+// int numericValue = 0;
+// bool validEntry = false;
 
-Console.WriteLine("Enter a number between 5 and 10:");
+// Console.WriteLine("Enter a number between 5 and 10:");
 
-do{
-    readResult = Console.ReadLine();
-    validEntry = int.TryParse(readResult, out numericValue);
-    if(validEntry)
-    {
-        if(numericValue > 5 && numericValue < 10){
-             break; 
-        }   
-        else
-        {
-            Console.WriteLine($"You entered {numericValue}. Please enter a number between 5 and 10.");
-            validEntry = false;
-        }
-    }
-    else
-    {
-        Console.WriteLine("Sorry, you entered an invalid number, please try again!");
-    }
+// do{
+//     readResult = Console.ReadLine();
+//     validEntry = int.TryParse(readResult, out numericValue);
+//     if(validEntry)
+//     {
+//         if(numericValue > 5 && numericValue < 10){
+//              break; 
+//         }   
+//         else
+//         {
+//             Console.WriteLine($"You entered {numericValue}. Please enter a number between 5 and 10.");
+//             validEntry = false;
+//         }
+//     }
+//     else
+//     {
+//         Console.WriteLine("Sorry, you entered an invalid number, please try again!");
+//     }
 
-} while(validEntry == false);
+// } while(validEntry == false);
 
-Console.WriteLine($"Your input value ({numericValue}) has been accepted.");
+// Console.WriteLine($"Your input value ({numericValue}) has been accepted.");
 //__________________________----Code project 1 - write code that validates integer input----____________________
+
+//__________________________----Code project 2 - write code that validates string input----____________________
+// string? readResult;
+// string role = "";
+// bool validEntry = false;
+
+// Console.WriteLine("Enter your role name(Administrator, Manager, or User):");
+// do{
+//     readResult = Console.ReadLine();
+    
+//     if(readResult != null){
+//         role = readResult.Trim();
+//         role = role.ToLower();  
+//     }
+    
+//     if(role == "administrator"  || role == "manager" || role == "user"){
+//         validEntry = true;  
+//     }
+//     else
+//     {
+//          Console.WriteLine($"The role name that you entered, \"{role}\" is not valid.");
+//     }
+ 
+// } while(validEntry == false);
+
+// Console.WriteLine($"Your input value ({role}) has been accepted.");
+//__________________________----Code project 2 - write code that validates string input----____________________
+
+//__________________________----Code project 3 - Write code that processes the contents of a string array----____________________
+string[] myStrings = new string[2] { "I like pizza. I like roast chicken. I like salad", "I like all three of the menu choices" };
+int periodLocation = 0;
+string myString = "";
+
+for(int i = 0; i< myStrings.Length; i++)
+{
+    myString = myStrings[i];
+    periodLocation = myString.IndexOf(".");
+    
+    string mySentence;
+
+    while(periodLocation != -1){
+        mySentence = myString.Remove(periodLocation);
+        myString = myString.Substring(periodLocation + 1);
+        myString = myString.TrimStart();
+        periodLocation = myString.IndexOf(".");
+        Console.WriteLine(mySentence);
+    }
+
+    mySentence = myString.Trim();
+    Console.WriteLine(mySentence);
+}
+//__________________________----Code project 3 - Write code that processes the contents of a string array----____________________
