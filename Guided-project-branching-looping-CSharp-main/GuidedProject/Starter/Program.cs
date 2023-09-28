@@ -8,10 +8,11 @@ string animalNickname = "";
 
 // variables that support data entry
 int maxPets = 8;
+int petAge;
 string? readResult;
 string menuSelection = "";
-string anotherPet = "y";
-int petCount = 0;
+// string anotherPet = "y";
+// int petCount = 0;
 
 // array used to store runtime data, there is no persisted data
 string[,] ourAnimals = new string[maxPets, 6];
@@ -78,18 +79,20 @@ do
     // display the top-level menu options
     // Console.Clear();
 
-    #region Show Options Menu
+    #region Show Options Menus
+
     Console.WriteLine("Welcome to the Contoso PetFriends app. Your main menu options are:");
     Console.WriteLine(" 1. List all of our current pet information");
     Console.WriteLine(" 2. Add a new animal friend to the ourAnimals array");
     Console.WriteLine(" 3. Ensure animal ages and physical descriptions are complete");
     Console.WriteLine(" 4. Ensure animal nicknames and personality descriptions are complete");
-    Console.WriteLine(" 5. Edit an animal’s age");
-    Console.WriteLine(" 6. Edit an animal’s personality description");
+    Console.WriteLine(" 5. Edit an animal's age");
+    Console.WriteLine(" 6. Edit an animal's personality description");
     Console.WriteLine(" 7. Display all cats with a specified characteristic");
     Console.WriteLine(" 8. Display all dogs with a specified characteristic");
     Console.WriteLine();
     Console.WriteLine("Enter your selection number (or type Exit to exit the program)");
+
     #endregion
 
     readResult = Console.ReadLine();
@@ -133,6 +136,7 @@ do
                 Console.WriteLine($"We currently have {petCount} pets that need homes. We can manage {(maxPets - petCount)} more.");
             }
 
+            //_________________Adding Pets' Information__________________
             while (anotherPet == "y" && petCount < maxPets)
             {
                 bool validEntry = false;
@@ -163,7 +167,7 @@ do
                 // get the pet's age. can be ? at initial entry.
                 do
                 {
-                    int petAge;
+
                     Console.WriteLine("Enter the pet's age or enter ? if unknown");
                     readResult = Console.ReadLine();
                     if (readResult != null)
@@ -263,6 +267,25 @@ do
             break;
 
         case "3":
+            bool isValid = false;
+            for (int i = 0; i < maxPets; i++)
+            {
+                if (ourAnimals[i, 2] == "Age: ?" && ourAnimals[i, 0] != "ID #: ")
+                {
+                    do
+                    {
+                        Console.WriteLine($"Enter an age for {ourAnimals[i, 0]}");
+                        readResult = Console.ReadLine();
+                        if (readResult != null)
+                        {
+                            animalAge = readResult;
+                            isValid = int.TryParse(animalAge, out petAge);
+                        }
+                    } while (isValid == false);
+                    ourAnimals[i, 2] = "Age: " + animalAge.ToString();
+                }
+            }
+
             break;
 
         case "4":
