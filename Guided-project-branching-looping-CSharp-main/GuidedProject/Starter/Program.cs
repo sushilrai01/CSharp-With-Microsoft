@@ -341,7 +341,29 @@ do
                     ourAnimals[i, 3] = "Nickname: " + animalNickname;
                 }
 
+                if (ourAnimals[i, 5] == "Personality: " && ourAnimals[i, 0] != "ID #: ")
+                {
+                    do
+                    {
+                        //"Enter a description of the pet's personality (likes or dislikes, tricks, energy level"
+                        Console.WriteLine($"Enter a personality description for {ourAnimals[i, 0]} (likes or dislikes, tricks, energy level)");
+                        readResult = Console.ReadLine();
+                        if (readResult != null)
+                        {
+                            animalPersonalityDescription = readResult.ToLower();
+                            if (animalPersonalityDescription == "")
+                            {
+                                validEntry = false;
+                            }
+                            else
+                            {
+                                validEntry = true;
+                            }
+                        }
+                    } while (validEntry == false);
 
+                    ourAnimals[i, 5] = "Personality: " + animalPersonalityDescription;
+                }
             }
             Console.WriteLine("\n\rAge and physical description fields are complete for all of our friends. \n\rPress the Enter key to continue");
             readResult = Console.ReadLine();
