@@ -284,6 +284,30 @@ do
                     } while (isValid == false);
                     ourAnimals[i, 2] = "Age: " + animalAge.ToString();
                 }
+
+                if (ourAnimals[i, 4] == "Physical description: tbd" && ourAnimals[i, 0] != "ID #: ")
+                {
+                    do
+                    {
+                        Console.WriteLine($"Enter a physical description for {ourAnimals[i, 0]} (size, color, gender, weight, housebroken)");
+                        readResult = Console.ReadLine();
+                        if (readResult != null)
+                        {
+                            animalPhysicalDescription = readResult.ToLower();
+                            if (animalPhysicalDescription == "")
+                            {
+                                isValid = false;
+                            }
+                            else
+                            {
+                                isValid = true;
+                            }
+
+                        }
+                    } while (isValid == false);
+
+                    ourAnimals[i, 4] = "Physical description: " + animalPhysicalDescription;
+                }
             }
 
             break;
