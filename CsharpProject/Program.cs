@@ -169,17 +169,17 @@
 //     // break;
 //     case 100:
 //     case 200:
-    //     title = "Senior Associate";
-    //     break;
+//     title = "Senior Associate";
+//     break;
 //     case 300:
-    //     title = "Manager";
-    //     break;
+//     title = "Manager";
+//     break;
 //     case 400:
-    //     title = "Senior Manager";
-    //     break;
+//     title = "Senior Manager";
+//     break;
 //     default:
-    //     title = "Associate";
-    //     break;
+//     title = "Associate";
+//     break;
 
 // }
 
@@ -265,7 +265,7 @@
 //        Console.WriteLine("[i]");
 
 //    foreach(var name in names) {
-       
+
 //     Console.WriteLine(name);
 
 //    }
@@ -277,7 +277,7 @@
 //     if(i % 3 == 0 && i % 5 ==0){
 //         Console.WriteLine(i + "- FizzBuzz");
 //     }
-   
+
 //     else if (i % 5 == 0){
 //         Console.WriteLine(i + "- Buzz");
 //     }
@@ -400,12 +400,12 @@
 // Console.WriteLine("Enter your role name(Administrator, Manager, or User):");
 // do{
 //     readResult = Console.ReadLine();
-    
+
 //     if(readResult != null){
 //         role = readResult.Trim();
 //         role = role.ToLower();  
 //     }
-    
+
 //     if(role == "administrator"  || role == "manager" || role == "user"){
 //         validEntry = true;  
 //     }
@@ -413,33 +413,39 @@
 //     {
 //          Console.WriteLine($"The role name that you entered, \"{role}\" is not valid.");
 //     }
- 
+
 // } while(validEntry == false);
 
 // Console.WriteLine($"Your input value ({role}) has been accepted.");
 //__________________________----Code project 2 - write code that validates string input----____________________
 
 //__________________________----Code project 3 - Write code that processes the contents of a string array----____________________
-string[] myStrings = new string[2] { "I like pizza. I like roast chicken. I like salad", "I like all three of the menu choices" };
-int periodLocation = 0;
-string myString = "";
+// string[] myStrings = new string[2] { "I like pizza. I like roast chicken. I like salad", "I like all three of the menu choices" };
+// int periodLocation = 0;
+// string myString = "";
 
-for(int i = 0; i< myStrings.Length; i++)
-{
-    myString = myStrings[i];
-    periodLocation = myString.IndexOf(".");
-    
-    string mySentence;
+// for(int i = 0; i< myStrings.Length; i++)
+// {
+//     myString = myStrings[i];
+//     periodLocation = myString.IndexOf(".");
 
-    while(periodLocation != -1){
-        mySentence = myString.Remove(periodLocation);
-        myString = myString.Substring(periodLocation + 1);
-        myString = myString.TrimStart();
-        periodLocation = myString.IndexOf(".");
-        Console.WriteLine(mySentence);
-    }
+//     string mySentence;
 
-    mySentence = myString.Trim();
-    Console.WriteLine(mySentence);
-}
+//     while(periodLocation != -1){
+//         mySentence = myString.Remove(periodLocation);
+//         myString = myString.Substring(periodLocation + 1);
+//         myString = myString.TrimStart();
+//         periodLocation = myString.IndexOf(".");
+//         Console.WriteLine(mySentence);
+//     }
+
+//     mySentence = myString.Trim();
+//     Console.WriteLine(mySentence);
+// }
 //__________________________----Code project 3 - Write code that processes the contents of a string array----____________________
+Console.WriteLine("Signed integral types:");
+
+Console.WriteLine($"sbyte  : {sbyte.MinValue} to {sbyte.MaxValue}");
+Console.WriteLine($"short  : {short.MinValue} to {short.MaxValue}");
+Console.WriteLine($"int    : {int.MinValue} to {int.MaxValue}");
+Console.WriteLine($"long   : {long.MinValue} to {long.MaxValue}");
