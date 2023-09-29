@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sushi\\CSharp-With-Microsoft\\Guided-project-foreach-if-array-CSharp-main\\GuidedProject\\Starter\\Starter.csproj": {}
+    "c:\\Users\\sushi\\CSharp-With-Microsoft\\Guided-project-foreach-if-array-CSharp-main\\GuidedProject\\Starter\\Starter.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sushi\\CSharp-With-Microsoft\\Guided-project-foreach-if-array-CSharp-main\\GuidedProject\\Starter\\Starter.csproj": {
+    "c:\\Users\\sushi\\CSharp-With-Microsoft\\Guided-project-foreach-if-array-CSharp-main\\GuidedProject\\Starter\\Starter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sushi\\CSharp-With-Microsoft\\Guided-project-foreach-if-array-CSharp-main\\GuidedProject\\Starter\\Starter.csproj",
+        "projectUniqueName": "c:\\Users\\sushi\\CSharp-With-Microsoft\\Guided-project-foreach-if-array-CSharp-main\\GuidedProject\\Starter\\Starter.csproj",
         "projectName": "Starter",
-        "projectPath": "C:\\Users\\sushi\\CSharp-With-Microsoft\\Guided-project-foreach-if-array-CSharp-main\\GuidedProject\\Starter\\Starter.csproj",
+        "projectPath": "c:\\Users\\sushi\\CSharp-With-Microsoft\\Guided-project-foreach-if-array-CSharp-main\\GuidedProject\\Starter\\Starter.csproj",
         "packagesPath": "C:\\Users\\sushi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sushi\\CSharp-With-Microsoft\\Guided-project-foreach-if-array-CSharp-main\\GuidedProject\\Starter\\obj\\",
+        "outputPath": "c:\\Users\\sushi\\CSharp-With-Microsoft\\Guided-project-foreach-if-array-CSharp-main\\GuidedProject\\Starter\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sushi\\AppData\\Roaming\\NuGet\\NuGet.Config",
