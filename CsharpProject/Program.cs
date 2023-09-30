@@ -499,13 +499,49 @@
 // int value2 = Convert.ToInt32(1.5m); // converting rounds up
 // Console.WriteLine(value2);
 //TryParse()
-string value = "10o2";
-int result = 0;
-if (int.TryParse(value, out result))
+// string value = "10o2";
+// int result = 0;
+// if (int.TryParse(value, out result))
+// {
+//     Console.WriteLine($"Measurement: {result}");
+// }
+// else
+// {
+//     Console.WriteLine("Unable to report the measurement.");
+// }
+
+// string value = "102";
+// int result = 0;
+// if (int.TryParse(value, out result))
+// {
+//     Console.WriteLine($"Measurement: {result}");
+// }
+// else
+// {
+//     Console.WriteLine("Unable to report the measurement.");
+// }
+
+// Console.WriteLine($"Measurement (w/ offset): {50 + result}");
+//____________________________combining string array values as strings and as integers challenge________________
+string[] values = { "12.3", "45", "ABC", "11", "DEF" };
+decimal number = 0;
+decimal sum = 0;
+bool isNumber = false;
+string str;
+string message = "";
+for (int i = 0; i < values.Length; i++)
 {
-    Console.WriteLine($"Measurement: {result}");
+    str = values[i];
+    isNumber = decimal.TryParse(str, out number);
+    if (isNumber)
+    {
+        sum += number;
+    }
+    else
+    {
+        message += str;
+    }
 }
-else
-{
-    Console.WriteLine("Unable to report the measurement.");
-}
+
+Console.WriteLine($"Message: {message}");
+Console.WriteLine($"Total: {sum}");
