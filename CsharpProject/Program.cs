@@ -669,19 +669,36 @@
 //     Console.WriteLine(item);
 // }
 
-//Write code to reverse each word in a message
-string pangram = "The quick brown fox jumps over the lazy dog";
-string reverseMsg = "";
+//_________________Write code to reverse each word in a message_______________
+// string pangram = "The quick brown fox jumps over the lazy dog";
+// string reverseMsg = "";
 
-Console.WriteLine(pangram);
-string[] itemString = pangram.Split();
+// Console.WriteLine(pangram);
+// string[] itemString = pangram.Split();
 
-foreach (string item in itemString)
+// foreach (string item in itemString)
+// {
+//     char[] chars = item.ToCharArray();
+//     Array.Reverse(chars);
+//     string msg = new string(chars);
+//     reverseMsg += msg + " ";
+// }
+
+// Console.WriteLine(reverseMsg);
+
+//_______________ ____________challenge to parse a string of orders, sort the orders and tag possible errors _______________
+string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
+String[] orderArray = orderStream.Split(',');
+Array.Sort(orderArray);
+string resultjoin = string.Join(",", orderArray);
+Console.WriteLine(resultjoin);
+
+foreach (string order in orderArray)
 {
-    char[] chars = item.ToCharArray();
-    Array.Reverse(chars);
-    string msg = new string(chars);
-    reverseMsg += msg + " ";
-}
+    int stringLength = order.Length;
 
-Console.WriteLine(reverseMsg);
+    if (stringLength == 4)
+        Console.WriteLine(order);
+    else
+        Console.WriteLine($"{order} - Error");
+}
