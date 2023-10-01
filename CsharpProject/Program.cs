@@ -653,18 +653,35 @@
 // }
 
 //_______________________ String to char array_______________
-string value = "abc123";
-char[] valueArray = value.ToCharArray();
-Array.Reverse(valueArray);
-string newArray = new string(valueArray);
-Console.WriteLine(newArray);
-// 
-string result = String.Join(",", valueArray);
-Console.WriteLine(result);
-//split
-string[] items = result.Split(',');
-Console.WriteLine(items);
-foreach (string item in items)
+// string value = "abc123";
+// char[] valueArray = value.ToCharArray();
+// Array.Reverse(valueArray);
+// string newArray = new string(valueArray);
+// Console.WriteLine(newArray);
+// // 
+// string result = String.Join(",", valueArray);
+// Console.WriteLine(result);
+// //split
+// string[] items = result.Split(',');
+// Console.WriteLine(items);
+// foreach (string item in items)
+// {
+//     Console.WriteLine(item);
+// }
+
+//Write code to reverse each word in a message
+string pangram = "The quick brown fox jumps over the lazy dog";
+string reverseMsg = "";
+
+Console.WriteLine(pangram);
+string[] itemString = pangram.Split();
+
+foreach (string item in itemString)
 {
-    Console.WriteLine(item);
+    char[] chars = item.ToCharArray();
+    Array.Reverse(chars);
+    string msg = new string(chars);
+    reverseMsg += msg + " ";
 }
+
+Console.WriteLine(reverseMsg);
