@@ -687,18 +687,43 @@
 // Console.WriteLine(reverseMsg);
 
 //_______________ ____________challenge to parse a string of orders, sort the orders and tag possible errors _______________
-string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
-String[] orderArray = orderStream.Split(',');
-Array.Sort(orderArray);
-string resultjoin = string.Join(",", orderArray);
-Console.WriteLine(resultjoin);
+// string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
+// String[] orderArray = orderStream.Split(',');
+// Array.Sort(orderArray);
+// string resultjoin = string.Join(",", orderArray);
+// Console.WriteLine(resultjoin);
 
-foreach (string order in orderArray)
-{
-    int stringLength = order.Length;
+// foreach (string order in orderArray)
+// {
+//     int stringLength = order.Length;
 
-    if (stringLength == 4)
-        Console.WriteLine(order);
-    else
-        Console.WriteLine($"{order} - Error");
-}
+//     if (stringLength == 4)
+//         Console.WriteLine(order);
+//     else
+//         Console.WriteLine($"{order} - Error");
+// }
+
+//_______________string formatting basics____________
+//________________ composite formatting________________
+string first = "Hello";
+string second = "World";
+string result = string.Format("{0} {1}!", first, second);
+Console.WriteLine(result);
+//__________String interpolation________________
+decimal prices = 123.45m;
+int discount = 50;
+Console.WriteLine($"Price: {prices:C} (Save {discount:C})");
+//___The N numeric format specifier makes numbers more readable
+decimal measurement = 123456.78912m;
+Console.WriteLine($"Measurement: {measurement:N} units");
+Console.WriteLine($"Measurement: {measurement:N4} units");//precison
+//Formatting Percentages
+decimal tax = .36785m;
+Console.WriteLine($"Tax rate: {tax:P3}");
+//Combining all....
+decimal price = 67.55m;
+decimal salePrice = 59.99m;
+
+string yourDiscount = String.Format("You saved {0:C2} off the regular {1:C2} price. ", (price - salePrice), price);
+yourDiscount += $"A discount of {((price - salePrice) / price):P2}!"; //inserted
+Console.WriteLine(yourDiscount);
