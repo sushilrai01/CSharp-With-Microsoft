@@ -892,12 +892,50 @@
 //     Console.WriteLine(message.Substring(openingPosition, length));
 // }
 //_____________________________Remove() and Replace() methods____________________________________
-string data = "12345John Smith          5000  3  ";
-string updatedData = data.Remove(5, 20);
-Console.WriteLine(updatedData);
+// string data = "12345John Smith          5000  3  ";
+// string updatedData = data.Remove(5, 20);
+// Console.WriteLine(updatedData);
 
-string message = "This--is--ex-amp-le--da-ta";
-Console.WriteLine(message);
-message = message.Replace("--", " ");
-message = message.Replace("-", "");
-Console.WriteLine(message);
+// string message = "This--is--ex-amp-le--da-ta";
+// Console.WriteLine(message);
+// message = message.Replace("--", " ");
+// message = message.Replace("-", "");
+// Console.WriteLine(message);
+//_______________________________Challenge to extract, replace, and remove data from an input string_______________________________
+const string input = "<div><h2>Widgets &trade;</h2><span>5000</span></div>";
+
+string quantity = "";
+string output = "";
+
+string spanOpen = "<span>";
+string spanClose = "</span>";
+
+int openingPositionSpan = input.IndexOf(spanOpen);
+openingPositionSpan += spanOpen.Length;
+
+int closingPositionSpan = input.IndexOf(spanClose);
+int length = closingPositionSpan - openingPositionSpan;
+
+quantity = input.Substring(openingPositionSpan, length);
+
+output = input;
+const string divOpen = "<div>";
+const string divClose = "</div>";
+
+int divStart = output.IndexOf(divOpen);
+int divStartLength = divOpen.Length;
+// Console.WriteLine(divStartLength);
+// Console.WriteLine(divStart);
+output = output.Remove(divStart, divStartLength);
+Console.WriteLine("_______________");
+
+int divEnd = output.IndexOf(divClose);
+int divEndLenth = divClose.Length;
+// Console.WriteLine(divEnd);
+// Console.WriteLine(divEndLenth);
+output = output.Remove(divEnd, divEndLenth);
+
+output = output.Replace("&trade;", "&reg;");
+
+Console.WriteLine(quantity);
+Console.WriteLine($"Output: {output}");
