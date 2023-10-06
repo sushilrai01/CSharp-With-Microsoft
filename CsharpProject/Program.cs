@@ -823,13 +823,13 @@
 // int length = closingPosition - openingPosition;
 // Console.WriteLine(message.Substring(openingPosition, length));
 //_______________________________LastIndexOf()__________________________
-string message = "(What if) I am (only interested) in the last (set of parentheses)?";
-int openingPosition = message.LastIndexOf('(');
+// string message = "(What if) I am (only interested) in the last (set of parentheses)?";
+// int openingPosition = message.LastIndexOf('(');
 
-openingPosition += 1;
-int closingPosition = message.LastIndexOf(')');
-int length = closingPosition - openingPosition;
-Console.WriteLine(message.Substring(openingPosition, length)); //OUTPUT: -set of parentheses-
+// openingPosition += 1;
+// int closingPosition = message.LastIndexOf(')');
+// int length = closingPosition - openingPosition;
+// Console.WriteLine(message.Substring(openingPosition, length)); //OUTPUT: -set of parentheses-
 
 //__________
 // string message = "(What if) there are (more than) one (set of parentheses)?";
@@ -857,3 +857,37 @@ Console.WriteLine(message.Substring(openingPosition, length)); //OUTPUT: -set of
 
 // openingPosition = message.IndexOfAny(openSymbols, startPosition);
 // Console.WriteLine($"Found WITH using startPosition: {message.Substring(openingPosition)}");
+//______________________________________________________________________________
+//______________________________________________________________________________
+
+string message = "(What if) I have [different symbols] but every {open symbol} needs a [matching closing symbol]?";
+
+char[] openSymbols = { '[', '{', '(' };
+int closingPosition = 0;
+
+while (true)
+{
+    int openingPosition = message.IndexOfAny(openSymbols, closingPosition);
+    if (openingPosition == -1) break;
+    string currentSymbol = message.Substring(openingPosition, 1);
+    char matchingSymbol = ' ';
+    switch (currentSymbol)
+    {
+        case "[":
+            matchingSymbol = ']';
+            break;
+        case "(":
+            matchingSymbol = ')';
+            break;
+
+        case "{":
+            matchingSymbol = '}';
+            break;
+    }
+
+    openingPosition += 1;
+    closingPosition = message.IndexOf(matchingSymbol, openingPosition);
+
+    int length = closingPosition - openingPosition;
+    Console.WriteLine(message.Substring(openingPosition, length));
+}
