@@ -860,34 +860,44 @@
 //______________________________________________________________________________
 //______________________________________________________________________________
 
-string message = "(What if) I have [different symbols] but every {open symbol} needs a [matching closing symbol]?";
+// string message = "(What if) I have [different symbols] but every {open symbol} needs a [matching closing symbol]?";
 
-char[] openSymbols = { '[', '{', '(' };
-int closingPosition = 0;
+// char[] openSymbols = { '[', '{', '(' };
+// int closingPosition = 0;
 
-while (true)
-{
-    int openingPosition = message.IndexOfAny(openSymbols, closingPosition);
-    if (openingPosition == -1) break;
-    string currentSymbol = message.Substring(openingPosition, 1);
-    char matchingSymbol = ' ';
-    switch (currentSymbol)
-    {
-        case "[":
-            matchingSymbol = ']';
-            break;
-        case "(":
-            matchingSymbol = ')';
-            break;
+// while (true)
+// {
+//     int openingPosition = message.IndexOfAny(openSymbols, closingPosition);
+//     if (openingPosition == -1) break;
+//     string currentSymbol = message.Substring(openingPosition, 1);
+//     char matchingSymbol = ' ';
+//     switch (currentSymbol)
+//     {
+//         case "[":
+//             matchingSymbol = ']';
+//             break;
+//         case "(":
+//             matchingSymbol = ')';
+//             break;
 
-        case "{":
-            matchingSymbol = '}';
-            break;
-    }
+//         case "{":
+//             matchingSymbol = '}';
+//             break;
+//     }
 
-    openingPosition += 1;
-    closingPosition = message.IndexOf(matchingSymbol, openingPosition);
+//     openingPosition += 1;
+//     closingPosition = message.IndexOf(matchingSymbol, openingPosition);
 
-    int length = closingPosition - openingPosition;
-    Console.WriteLine(message.Substring(openingPosition, length));
-}
+//     int length = closingPosition - openingPosition;
+//     Console.WriteLine(message.Substring(openingPosition, length));
+// }
+//_____________________________Remove() and Replace() methods____________________________________
+string data = "12345John Smith          5000  3  ";
+string updatedData = data.Remove(5, 20);
+Console.WriteLine(updatedData);
+
+string message = "This--is--ex-amp-le--da-ta";
+Console.WriteLine(message);
+message = message.Replace("--", " ");
+message = message.Replace("-", "");
+Console.WriteLine(message);
