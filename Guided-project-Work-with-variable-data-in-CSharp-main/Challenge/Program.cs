@@ -175,7 +175,7 @@ do
                             // #5 update "searching" message to show countdown 
                             foreach (string icon in searchingIcons)
                             {
-                                Console.Write($"\rsearching...{dogCharacteristics[k]} {icon} {j}  ");
+                                Console.Write($"\rsearching...{ourAnimals[i, 3]} for ({dogCharacteristics[k]})  {icon} {j}  ");
                                 Thread.Sleep(200);
                             }
 
