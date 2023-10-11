@@ -995,26 +995,27 @@ int currentGMT = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Current Medicine Schedule:");
 
 /* Format and display medicine times */
-foreach (int val in times)
-{
-    string time = val.ToString();
-    int len = time.Length;
+// foreach (int val in times)
+// {
+//     string time = val.ToString();
+//     int len = time.Length;
 
-    if (len >= 3)
-    {
-        time = time.Insert(len - 2, ":");
-    }
-    else if (len == 2)
-    {
-        time = time.Insert(0, "0:");
-    }
-    else
-    {
-        time = time.Insert(0, "0:0");
-    }
+//     if (len >= 3)
+//     {
+//         time = time.Insert(len - 2, ":");
+//     }
+//     else if (len == 2)
+//     {
+//         time = time.Insert(0, "0:");
+//     }
+//     else
+//     {
+//         time = time.Insert(0, "0:0");
+//     }
 
-    Console.Write($"{time} ");
-}
+//     Console.Write($"{time} ");
+// }
+displayTime(times);
 
 Console.WriteLine();
 
@@ -1071,3 +1072,27 @@ foreach (int val in times)
 }
 
 Console.WriteLine();
+//----------------Function
+void displayTime(int[] times)
+{
+    foreach (int val in times)
+    {
+        string time = val.ToString();
+        int len = time.Length;
+
+        if (len >= 3)
+        {
+            time = time.Insert(len - 2, ":");
+        }
+        else if (len == 2)
+        {
+            time = time.Insert(0, "0:");
+        }
+        else
+        {
+            time = time.Insert(0, "0:0");
+        }
+
+        Console.Write($"{time} ");
+    }
+}
