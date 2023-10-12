@@ -1057,66 +1057,94 @@
 //_______________________Identify duplicated code & Create reusable methods__________________________
 //   _____________________________________________________________________________________________
 
-//______________________ Checking... whether an IPv4 address is valid or invalid!!__________________________
-using System.Xml.Serialization;
+// //______________________ Checking... whether an IPv4 address is valid or invalid!!__________________________
+// using System.Xml.Serialization;
 
-string ipv4Input = "107.031.255.205";
-bool validLength = false;
-bool validZeroes = false;
-bool validRange = false;
-ValidateLength();
-ValidateZeroes();
-ValidateRange();
+// string ipv4Input = "107.031.255.205";
+// bool validLength = false;
+// bool validZeroes = false;
+// bool validRange = false;
+// ValidateLength();
+// ValidateZeroes();
+// ValidateRange();
 
-if (validLength && validZeroes && validRange)
-{
-    Console.WriteLine($"ip is a valid IPv4 address");
-}
-else
-{
-    Console.WriteLine($"ip is an invalid IPv4 address");
-}
+// if (validLength && validZeroes && validRange)
+// {
+//     Console.WriteLine($"ip is a valid IPv4 address");
+// }
+// else
+// {
+//     Console.WriteLine($"ip is an invalid IPv4 address");
+// }
 
-void ValidateLength()
-{
-    string[] address = ipv4Input.Split('.');
-    validLength = address.Length == 4;
-}
+// void ValidateLength()
+// {
+//     string[] address = ipv4Input.Split('.');
+//     validLength = address.Length == 4;
+// }
 
-void ValidateRange()
+// void ValidateRange()
+// {
+//     string[] address = ipv4Input.Split(".", StringSplitOptions.RemoveEmptyEntries);
+//     int number = 0;
+//     bool validNo = false;
+//     foreach (string str in address)
+//     {
+//         validNo = int.TryParse(str, out number);
+//         if (validNo && number > 0 && number < 255)
+//         {
+//             validRange = true;
+//         }
+//         else
+//         {
+//             Console.WriteLine("Greater no.");
+//             validRange = false;
+//             return; //_________________The return statement terminates execution of the________
+//                     //_________________method and returns control to the method caller_________
+//         }
+//         // Console.WriteLine("111 " + str);
+//     }
+// }
+
+// void ValidateZeroes()
+// {
+//     string[] address = ipv4Input.Split(".");
+//     validZeroes = true;
+//     foreach (string number in address)
+//     {
+//         if (number.Length > 1 && number.StartsWith("0"))
+//         {
+//             Console.WriteLine("Starts with zero'0'");
+//             validZeroes = false;
+//             return;
+//         }
+//     }
+// }
+//______________________ CHECKED... whether an IPv4 address is valid or invalid!! __________________________
+//_____________________________________________________________________________________________________________
+//______________________ Challenge To Create A Reusable Method that Prints A Player's Fortune !___________________
+
+Random random = new Random();
+int luck = random.Next(100);
+
+string[] text = { "You have much to", "Today is a day to", "Whatever work you do", "This is an ideal time to" };
+string[] good = { "look forward to.", "try new things!", "is likely to succeed.", "accomplish your dreams!" };
+string[] bad = { "fear.", "avoid major decisions.", "may have unexpected outcomes.", "re-evaluate your life." };
+string[] neutral = { "appreciate.", "enjoy time with friends.", "should align with your values.", "get in tune with nature." };
+Console.WriteLine(luck);
+FortuneTeller();
+
+luck = random.Next(100);
+Console.WriteLine($"Luck: {luck}");
+FortuneTeller();
+
+void FortuneTeller()
 {
-    string[] address = ipv4Input.Split(".", StringSplitOptions.RemoveEmptyEntries);
-    int number = 0;
-    bool validNo = false;
-    foreach (string str in address)
+    Console.WriteLine("A fortune teller whispers the following words:");
+    string[] fortune = (luck > 75 ? good : (luck < 25 ? bad : neutral));
+    for (int i = 0; i < 4; i++)
     {
-        validNo = int.TryParse(str, out number);
-        if (validNo && number > 0 && number < 255)
-        {
-            validRange = true;
-        }
-        else
-        {
-            Console.WriteLine("Greater no.");
-            validRange = false;
-            return; //_________________The return statement terminates execution of the________
-                    //_________________method and returns control to the method caller_________
-        }
-        // Console.WriteLine("111 " + str);
+        Console.Write($"{text[i]} {fortune[i]} ");
     }
-}
-
-void ValidateZeroes()
-{
-    string[] address = ipv4Input.Split(".");
-    validZeroes = true;
-    foreach (string number in address)
-    {
-        if (number.Length > 1 && number.StartsWith("0"))
-        {
-            Console.WriteLine("Starts with zero'0'");
-            validZeroes = false;
-            return;
-        }
-    }
+    Console.WriteLine("\n-------------------");
 }
