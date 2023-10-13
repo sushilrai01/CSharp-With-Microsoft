@@ -1230,7 +1230,10 @@ void Clear(int[] array)
     Console.WriteLine("cleared!!");
 }
 
-//________________-Test with strings___________
+//________________________________-Test with strings____________________________________________________ 
+//_________ A new string with the value "Unhealthy" was created and then lost in the method scope.
+//_________To correct this problem, you can change SetHealth to use the global status variable instead.
+//______________________________________________________________________________________________________
 // string status = "Healthy";
 
 // Console.WriteLine($"Start: {status}");
@@ -1242,7 +1245,7 @@ void Clear(int[] array)
 //     status = (isHealthy ? "Healthy" : "Unhealthy");
 //     Console.WriteLine($"Middle: {status}");
 // }
-//____________ overwrite the global status variable with the new string value.________
+//____________ Overwriting the global status variable with the new string value________________________
 string status = "Healthy";
 
 Console.WriteLine($"Start: {status}");
