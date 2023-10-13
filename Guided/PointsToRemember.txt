@@ -1,2 +1,9 @@
  --Break and Return
  The break keyword terminates a loop or switch statement, but the return keyword terminates the current method
+
+--Parameters passed by value and passed by reference
+ When an argument is passed to a method, value type variables have their values copied into the method. 
+ Each variable has its own copy of the value, so the original variable isn't modified._________
+With reference types, the address of the value is passed into the method. 
+The variable given to the method references the value at that address, so operations on that 
+variable affect the value that is referenced by the other.
