@@ -1229,3 +1229,28 @@ void Clear(int[] array)
     }
     Console.WriteLine("cleared!!");
 }
+
+//________________-Test with strings___________
+// string status = "Healthy";
+
+// Console.WriteLine($"Start: {status}");
+// SetHealth(status, false);
+// Console.WriteLine($"End: {status}");
+
+// void SetHealth(string status, bool isHealthy)
+// {
+//     status = (isHealthy ? "Healthy" : "Unhealthy");
+//     Console.WriteLine($"Middle: {status}");
+// }
+//____________ overwrite the global status variable with the new string value.________
+string status = "Healthy";
+
+Console.WriteLine($"Start: {status}");
+SetHealth(false);
+Console.WriteLine($"End: {status}");
+
+void SetHealth(bool isHealthy)
+{
+    status = (isHealthy ? "Healthy" : "Unhealthy");
+    Console.WriteLine($"Middle: {status}");
+}

@@ -7,3 +7,7 @@
 With reference types, the address of the value is passed into the method. 
 The variable given to the method references the value at that address, so operations on that 
 variable affect the value that is referenced by the other.
+
+--Test with strings
+ strings are an immutable type. Even though a string is a reference value type, unlike an array,
+  its value can't be altered once it's assigned.
