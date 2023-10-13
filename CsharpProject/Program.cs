@@ -1124,27 +1124,133 @@
 //_____________________________________________________________________________________________________________
 //______________________ Challenge To Create A Reusable Method that Prints A Player's Fortune !___________________
 
-Random random = new Random();
-int luck = random.Next(100);
+// Random random = new Random();
+// int luck = random.Next(100);
 
-string[] text = { "You have much to", "Today is a day to", "Whatever work you do", "This is an ideal time to" };
-string[] good = { "look forward to.", "try new things!", "is likely to succeed.", "accomplish your dreams!" };
-string[] bad = { "fear.", "avoid major decisions.", "may have unexpected outcomes.", "re-evaluate your life." };
-string[] neutral = { "appreciate.", "enjoy time with friends.", "should align with your values.", "get in tune with nature." };
-Console.WriteLine(luck);
-FortuneTeller();
+// string[] text = { "You have much to", "Today is a day to", "Whatever work you do", "This is an ideal time to" };
+// string[] good = { "look forward to.", "try new things!", "is likely to succeed.", "accomplish your dreams!" };
+// string[] bad = { "fear.", "avoid major decisions.", "may have unexpected outcomes.", "re-evaluate your life." };
+// string[] neutral = { "appreciate.", "enjoy time with friends.", "should align with your values.", "get in tune with nature." };
+// Console.WriteLine(luck);
+// FortuneTeller();
 
-luck = random.Next(100);
-Console.WriteLine($"Luck: {luck}");
-FortuneTeller();
+// luck = random.Next(100);
+// Console.WriteLine($"Luck: {luck}");
+// FortuneTeller();
 
-void FortuneTeller()
+// void FortuneTeller()
+// {
+//     Console.WriteLine("A fortune teller whispers the following words:");
+//     string[] fortune = (luck > 75 ? good : (luck < 25 ? bad : neutral));
+//     for (int i = 0; i < 4; i++)
+//     {
+//         Console.Write($"{text[i]} {fortune[i]} ");
+//     }
+//     Console.WriteLine("\n-------------------");
+// }
+//_____________________________________________________________________________________________________________
+//________________________________Create a method with parameters_________________________________________
+int[] schedule = { 800, 1200, 1600, 2000 };
+
+void DisplayAdjustedTimes(int[] times, int currentGMT, int newGMT)
 {
-    Console.WriteLine("A fortune teller whispers the following words:");
-    string[] fortune = (luck > 75 ? good : (luck < 25 ? bad : neutral));
-    for (int i = 0; i < 4; i++)
+    int diff = 0;
+    if (Math.Abs(newGMT) > 12 || Math.Abs(currentGMT) > 12)
     {
-        Console.Write($"{text[i]} {fortune[i]} ");
+        Console.WriteLine("Invalid GMT");
     }
-    Console.WriteLine("\n-------------------");
+    else if (newGMT <= 0 && currentGMT <= 0 || newGMT >= 0 && currentGMT >= 0)
+    {
+        diff = 100 * (Math.Abs(newGMT) - Math.Abs(currentGMT));
+    }
+    else
+    {
+        diff = 100 * (Math.Abs(newGMT) + Math.Abs(currentGMT));
+    }
+
+    for (int i = 0; i < times.Length; i++)
+    {
+        int newTime = ((times[i] + diff)) % 2400;
+        Console.WriteLine($"{times[i]} -> {newTime}");
+    }
+}
+
+DisplayAdjustedTimes(schedule, 6, -6);
+
+string[] students = { "Jenna", "Ayesha", "Carlos", "Viktor" };
+//______________________________--- Understand method scope ----_____________________
+DisplayStudents(students);
+DisplayStudents(new string[] { "Robert", "Vanya" });
+
+void DisplayStudents(string[] students)
+{
+    foreach (string student in students)
+    {
+        Console.Write($"{student}, ");
+    }
+    Console.WriteLine();
+}
+
+//______________________________-Parameters passed by value and passed by reference_____________________
+//__________VALUE________________
+int a = 3;
+int b = 4;
+int c = 0;
+
+Multiply(a, b, c);
+Console.WriteLine($"global statement: {a} x {b} = {c}");
+
+void Multiply(int a, int b, int c)
+{
+    c = a * b;
+    Console.WriteLine($"inside Multiply method: {a} x {b} = {c}");
+}
+//___________REFERENCE________________
+int[] array = { 1, 2, 3, 4, 5 };
+
+PrintArray(array);
+Clear(array);
+PrintArray(array);
+
+void PrintArray(int[] array)
+{
+    foreach (int a in array)
+    {
+        Console.Write($"{a} ");
+    }
+    Console.WriteLine();
+}
+
+void Clear(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = 0;
+    }
+    Console.WriteLine("cleared!!");
+}
+
+//________________-Test with strings___________
+// string status = "Healthy";
+
+// Console.WriteLine($"Start: {status}");
+// SetHealth(status, false);
+// Console.WriteLine($"End: {status}");
+
+// void SetHealth(string status, bool isHealthy)
+// {
+//     status = (isHealthy ? "Healthy" : "Unhealthy");
+//     Console.WriteLine($"Middle: {status}");
+// }
+//____________ overwrite the global status variable with the new string value.________
+string status = "Healthy";
+
+Console.WriteLine($"Start: {status}");
+SetHealth(false);
+Console.WriteLine($"End: {status}");
+
+void SetHealth(bool isHealthy)
+{
+    status = (isHealthy ? "Healthy" : "Unhealthy");
+    Console.WriteLine($"Middle: {status}");
 }
