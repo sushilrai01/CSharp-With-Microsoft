@@ -11,3 +11,7 @@ variable affect the value that is referenced by the other.
 --Test with strings
  strings are an immutable type. Even though a string is a reference value type, unlike an array,
   its value can't be altered once it's assigned.
+
+-- Methods with optional parameters
+Named arguments allow you to specify the value for a parameter using its name rather than position. Optional parameters 
+allow you to omit those arguments when calling the method.
