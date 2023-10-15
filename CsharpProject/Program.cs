@@ -1311,35 +1311,127 @@
 //     }
 // }
 // __________________________________Challenge to display email addresses_______________________________
-string[,] corporate =
+// string[,] corporate =
+// {
+//     {"Robert", "Bavin"}, {"Simon", "Bright"},
+//     {"Kim", "Sinclair"}, {"Aashrita", "Kamath"},
+//     {"Sarah", "Delucchi"}, {"Sinan", "Ali"}
+// };
+
+// string[,] external =
+// {
+//     {"Vinnie", "Ashton"}, {"Cody", "Dysart"},
+//     {"Shay", "Lawrence"}, {"Daren", "Valdes"}
+// };
+// string username = "";
+// string email = "";
+// // string externalDomain = "hayworth.com";
+// string internalDomain = "contoso.com";
+
+// DisplayEmaill(corporate, internalDomain);
+// DisplayEmaill(external);
+
+// void DisplayEmaill(string[,] employeeTypes, string domain = "hayworth.com")
+
+// {
+//     for (int i = 0; i < employeeTypes.GetLength(0); i++)
+//     {
+//         username = employeeTypes[i, 0].Substring(0, 2) + employeeTypes[i, 1];
+//         username = username.ToLower();
+//         email = $"{username}@{domain}";
+//         Console.WriteLine(email);
+//     }
+//     Console.WriteLine("__________________");
+// }
+// __________________________________<END> Challenge to display email addresses </END>_______________________________
+// _________________________________________________________________________________________________________________
+// __________________________________C# methods that return values__________________________________ 
+// double total = 0;
+// double minimumSpend = 30.00;
+
+// double[] items = { 15.97, 3.50, 12.25, 22.99, 10.98 };
+// double[] discounts = { 0.30, 0.00, 0.10, 0.20, 0.50 };
+
+// for (int i = 0; i < items.Length; i++)
+// {
+//     total += GetDiscountedPrice(i);
+// }
+
+// Console.WriteLine($"Total: ${total}");
+
+// if (TotalMeetsMinimum())
+// {
+//     total -= 5.00;
+// }
+
+// Console.WriteLine($"Total: ${total}");
+// Console.WriteLine($"Total: ${FormatDecimal(total)}");
+
+// double GetDiscountedPrice(int itemIndex)
+// {
+//     double result = items[itemIndex] * (1 - discounts[itemIndex]);
+//     return result;
+// }
+
+// bool TotalMeetsMinimum()
+// {
+//     return total >= minimumSpend;
+// }
+
+// string FormatDecimal(double input)
+// {
+//     return input.ToString().Substring(0, 5);
+// }
+
+// // _______________________________________________________________________________-
+// double usd = 23.73;
+// int vnd = UsdToVnd(usd);
+
+// Console.WriteLine($"${usd} USD = ${vnd} VND");
+// Console.WriteLine($"${vnd} VND = ${VndToUsd(vnd)} USD");
+
+// int UsdToVnd(double usd)
+// {
+//     int rate = 23500;
+//     return (int)(rate * usd);
+// }
+
+// double VndToUsd(int vnd)
+// {
+//     int rate = 23500;
+//     return vnd / rate;
+// }
+
+// __________________________________ Return strings from methods(reverse a string without using string.Reverse)__________________________________ 
+string input = "Ya Hoo!";
+string reverseString = ReverseWord(input);
+Console.WriteLine(reverseString);
+
+string ReverseWord(string word)
 {
-    {"Robert", "Bavin"}, {"Simon", "Bright"},
-    {"Kim", "Sinclair"}, {"Aashrita", "Kamath"},
-    {"Sarah", "Delucchi"}, {"Sinan", "Ali"}
-};
-
-string[,] external =
-{
-    {"Vinnie", "Ashton"}, {"Cody", "Dysart"},
-    {"Shay", "Lawrence"}, {"Daren", "Valdes"}
-};
-string username = "";
-string email = "";
-// string externalDomain = "hayworth.com";
-string internalDomain = "contoso.com";
-
-DisplayEmaill(corporate, internalDomain);
-DisplayEmaill(external);
-
-void DisplayEmaill(string[,] employeeTypes, string domain = "hayworth.com")
-
-{
-    for (int i = 0; i < employeeTypes.GetLength(0); i++)
+    string result = "";
+    for (int i = word.Length - 1; i >= 0; i--)
     {
-        username = employeeTypes[i, 0].Substring(0, 2) + employeeTypes[i, 1];
-        username = username.ToLower();
-        email = $"{username}@{domain}";
-        Console.WriteLine(email);
+        result += word[i];
     }
-    Console.WriteLine("__________________");
+    return result;
 }
+
+// _________________________________ Method to reverse words in a sentence_________________________________
+
+string sentence = "You can extract the individual words from the string using string.Split() ";
+
+Console.WriteLine(sentence);
+Console.WriteLine(ReverseSentence(sentence));
+
+string ReverseSentence(string input)
+{
+    string result = "";
+    string[] words = input.Split(" ");
+    foreach (string word in words)
+    {
+        result += ReverseWord(word) + " ";
+    }
+    return result.Trim();
+}
+
