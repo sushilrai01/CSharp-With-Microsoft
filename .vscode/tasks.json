@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "dotnet",
+      "task": "build",
+      "problemMatcher": ["$msCompile"],
+      "group": "build",
+      "label": "dotnet: build"
+    },
+    {
+      "type": "dotnet",
+      "task": "watch Starter",
+      "file": "C:\\Users\\sushi\\CSharp-With-Microsoft\\Guided-project-foreach-if-array-CSharp-main\\GuidedProject\\Starter\\Starter.csproj",
+      "problemMatcher": ["$msCompile"],
+      "label": "dotnet: watch Starter"
+    }
+  ]
+}
